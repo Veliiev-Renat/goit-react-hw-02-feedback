@@ -14,16 +14,16 @@ export class App extends Component{
   const {name} = e.target 
   this.setState(state=>({[name]:state[name] + 1}))
  }
- 
   render(){
     const {Good,Neutral,Bad} = this.state
-    const total = Good+Neutral+Bad
+    const total = Good + Neutral + Bad
+    const positivePercentage = Math.round(Good / total * 100)
     return (
     <>
     <Section title="Please leave a feedback" children={<FeedbackOptions options={this.state} onLeaveFeedback={this.buttonClick}/>}/>
     <Section title='Statistics'
      children={<Statistics good={Good} neutral={Neutral} bad={Bad} 
-     total={total} positivePercentage={Good / total * 100}/>}/>
+     total={total} positivePercentage={positivePercentage}/>}/>
     </>
   )}
 };

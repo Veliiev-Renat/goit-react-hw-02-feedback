@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default class Section extends Component{
     render(){
-        const { title,children } = this.props;
+        const {title,children } = this.props;
         return(<section key={title}>
             <h2>{title}</h2>
             {children}
